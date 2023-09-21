@@ -11,22 +11,22 @@ shaker = mixer.Sound("./Sounds/shaker.mp3")
 percussion = mixer.Sound("./Sounds/percussion.mp3")
 
 #Sound playing funtions/ funções do som 
-def playKick(event):
+def playKick(*args):
     kick.play(loops=0)
 
-def playSnare(event):
+def playSnare(*args):
     snare.play(loops=0)
 
-def playHihat(event):
+def playHihat(*args):
     hihat.play(loops=0)
 
-def playOpenhat(event):
+def playOpenhat(*args):
     openhat.play(loops=0)
 
-def playPerc(event):
+def playPerc(*args):
     percussion.play(loops=0)
 
-def playShaker(event):
+def playShaker(*args):
     shaker.play(loops=0)
             
 #Creating window/ Criando janela
@@ -48,33 +48,16 @@ title.place(x=10,y=0)
 
 #Labels/Titulos
 subTitle = tb.Label(text="You can use keyboard keys!! (A,s,d,z,x,c)", font=("Bahnschrift",14))
-subTitle.place(x=10,y=40)
-#Buttons/Botões
-def playKickbtn():
-    kick.play(loops=0)
+subTitle.place(x=10,y=50)
 
-def playHihatbtn():
-    hihat.play(loops=0)
-
-def playOpenbtn():
-    openhat.play(loops=0)
-
-def playPercbtn():
-    percussion.play(loops=0)
-
-def playShakerbtn():
-    shaker.play(loops=0)
-            
-def playSnarebtn():
-    snare.play(loops=0)
 #Create custom style/ criar estilo customizado
 
 customStyle = tb.Style()
 customStyle.configure('dark.TButton', font=("Bahnschrift",28))
-
-kickBtn = tb.Button(window,text="KICK",bootstyle="dark",command=playKickbtn,style="dark.TButton")
+#Buttons/Botões
+kickBtn = tb.Button(window,text="KICK",bootstyle="dark",command=playKick,style="dark.TButton")
 kickBtn.place(x=90,y=100)
-snareBtn = tb.Button(window,text="SNARE",bootstyle="dark",command=playSnarebtn,style="dark.TButton")
-snareBtn.place(x=200,y=100)
+snareBtn = tb.Button(window,text="SNARE",bootstyle="dark",command=playSnare,style="dark.TButton")
+snareBtn.place(x=300,y=100)
 #window´s main loop/ loop principal da janela
 window.mainloop()
